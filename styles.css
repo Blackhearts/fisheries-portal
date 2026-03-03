@@ -1,0 +1,149 @@
+:root{
+  --bg:#0b1220;
+  --card:#0f1b33;
+  --line:rgba(255,255,255,.12);
+  --text:#eaf0ff;
+  --muted:rgba(234,240,255,.75);
+  --paper:#ffffff;
+  --ink:#0b1220;
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:#f6f8fc}
+a{color:inherit;text-decoration:none}
+.container{max-width:1200px;margin:0 auto;padding:0 18px}
+
+/* Top government bar */
+.topbar{
+  background:var(--bg);
+  color:var(--text);
+  border-bottom:1px solid var(--line);
+}
+.topbar-inner{
+  display:flex;flex-wrap:wrap;gap:10px;
+  align-items:center;justify-content:space-between;
+  padding:10px 0;
+  font-size:13px;
+}
+.topbar .pill{
+  display:inline-flex;gap:10px;align-items:center;
+  padding:6px 10px;border:1px solid var(--line);
+  border-radius:999px;color:var(--muted)
+}
+.topbar .pill strong{color:var(--text);font-weight:600}
+.topbar .right a{
+  color:var(--text);
+  padding:8px 10px;border:1px solid var(--line);
+  border-radius:10px;
+}
+.topbar .right a:hover{background:rgba(255,255,255,.06)}
+
+/* Main header + nav */
+.header{
+  background:linear-gradient(180deg, #0b1220 0%, #0c1730 60%, #0b1220 100%);
+  color:var(--text);
+}
+.header-inner{padding:18px 0 14px 0}
+.brand{
+  display:flex;align-items:center;gap:12px;
+}
+.brand-mark{
+  width:42px;height:42px;border-radius:14px;
+  display:grid;place-items:center;
+  background:rgba(255,255,255,.10);
+  border:1px solid var(--line);
+  font-weight:800;
+}
+.brand-title{line-height:1.1}
+.brand-title .name{font-size:16px;font-weight:700}
+.brand-title .sub{font-size:12px;color:var(--muted);margin-top:3px}
+
+.navwrap{margin-top:14px}
+.nav{
+  display:flex;flex-wrap:wrap;gap:8px;align-items:center;
+}
+.nav > li{list-style:none;position:relative}
+.nav > li > a, .nav > li > button{
+  cursor:pointer;
+  background:transparent;
+  border:1px solid var(--line);
+  color:var(--text);
+  padding:10px 12px;
+  border-radius:12px;
+  font-size:14px;
+  display:inline-flex;gap:8px;align-items:center;
+}
+.nav > li > a:hover, .nav > li > button:hover{
+  background:rgba(255,255,255,.07);
+}
+.caret{opacity:.8}
+
+/* Dropdown */
+.dropdown{
+  position:absolute;top:52px;left:0;
+  min-width:260px;
+  background:rgba(15,27,51,.98);
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:8px;
+  display:none;
+  z-index:50;
+  backdrop-filter: blur(8px);
+}
+.dropdown a{
+  display:block;
+  padding:10px 10px;
+  border-radius:10px;
+  color:var(--text);
+  font-size:14px;
+}
+.dropdown a small{display:block;color:var(--muted);margin-top:2px;font-size:12px}
+.dropdown a:hover{background:rgba(255,255,255,.08)}
+.nav > li.open .dropdown{display:block}
+
+/* Hero + sections */
+.hero{
+  padding:26px 0 18px 0;
+  color:var(--text);
+}
+.hero-grid{
+  display:grid;gap:14px;
+  grid-template-columns: 1.3fr .7fr;
+}
+@media (max-width: 900px){ .hero-grid{grid-template-columns:1fr} }
+.hero h1{margin:0;font-size:34px;letter-spacing:-.02em}
+.hero p{margin:10px 0 0 0;color:var(--muted);max-width:60ch}
+.hero .actions{margin-top:14px;display:flex;flex-wrap:wrap;gap:10px}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:11px 14px;border-radius:12px;border:1px solid var(--line);
+  color:var(--text);background:rgba(255,255,255,.06);
+  font-weight:600;font-size:14px;
+}
+.btn.primary{background:#ffffff;color:#0b1220;border-color:#ffffff}
+.btn:hover{filter:brightness(1.05)}
+
+.card{
+  background:var(--paper);
+  border:1px solid rgba(11,18,32,.10);
+  border-radius:18px;
+  padding:16px;
+  box-shadow: 0 10px 30px rgba(11,18,32,.06);
+}
+.grid{
+  display:grid;gap:14px;
+  grid-template-columns: repeat(3, 1fr);
+}
+@media (max-width: 900px){ .grid{grid-template-columns:1fr} }
+
+.card h3{margin:0;font-size:16px}
+.card p{margin:8px 0 0 0;color:#42526e;font-size:14px}
+
+.section{padding:18px 0 32px 0}
+.section h2{margin:0 0 10px 0;font-size:20px}
+.section .muted{color:#42526e;font-size:14px;margin:0 0 14px 0}
+
+.footer{
+  border-top:1px solid rgba(11,18,32,.10);
+  padding:18px 0;color:#42526e;font-size:13px
+}
